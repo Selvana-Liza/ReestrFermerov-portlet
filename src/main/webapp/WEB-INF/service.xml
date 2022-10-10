@@ -1,0 +1,72 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.liferay.reestrFermerov">
+    <author>liza</author>
+    <namespace>RR</namespace>
+    <entity name="Fermer" local-service="true" remote-service="true">
+
+        <column name="fermerId" primary="true" type="long" />
+        <column name="name" type="String" />
+        <column name="pravoForma" type="String" />
+        <column name="inn" type="String" />
+        <column name="kpp" type="String" />
+        <column name="ogrn" type="String" />
+        <column name="rayonRegistration" type="String" />
+        <column name="rayonPosevPole" type="String" />
+        <column name="dateRegistration" type="Date" />
+        <column name="archiveStatus" type="boolean" />
+
+        <column name="rayonsPP" type="Collection" entity="Rayon" mapping-table="RayonsPP_Fermers" />
+
+        <order>
+            <order-column name="name" order-by="asc" />
+        </order>
+
+        <finder name="fermerId" return-type="Collection">
+            <finder-column name="fermerId" />
+        </finder>
+        <finder name="Name" return-type="Collection">
+            <finder-column name="name" />
+        </finder>
+        <finder name="Inn" return-type="Collection">
+            <finder-column name="inn" />
+        </finder>
+        <finder name="RayonRegistration" return-type="Collection">
+            <finder-column name="rayonRegistration" />
+        </finder>
+        <finder name="DateRegistration" return-type="Collection">
+            <finder-column name="dateRegistration" />
+        </finder>
+        <finder name="ArchiveStatus" return-type="Collection">
+            <finder-column name="archiveStatus" />
+        </finder>
+    </entity>
+    <exceptions>
+        <exception>FermerName</exception>
+        <exception>FermerInn</exception>
+    </exceptions>
+
+    <entity name="Rayon" local-service="true" remote-service="true">
+
+        <column name="rayonId" primary="true" type="long" />
+        <column name="name" type="String" />
+        <column name="kod" type="int" />
+        <column name="archive" type="boolean" />
+
+        <column name="fermers" type="Collection" entity="Fermer" mapping-table="Fermers_Rayons" />
+
+        <order>
+            <order-column name="name" order-by="asc" />
+        </order>
+
+        <finder name="rayonId" return-type="Collection">
+            <finder-column name="rayonId" />
+        </finder>
+        <finder name="Name" return-type="Collection">
+            <finder-column name="name" />
+        </finder>
+        <finder name="Archive" return-type="Collection">
+            <finder-column name="archive" />
+        </finder>
+    </entity>
+</service-builder>

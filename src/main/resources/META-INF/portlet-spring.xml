@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.reestrFermerov.service.FermerLocalService" class="com.liferay.reestrFermerov.service.impl.FermerLocalServiceImpl" />
+	<bean id="com.liferay.reestrFermerov.service.FermerService" class="com.liferay.reestrFermerov.service.impl.FermerServiceImpl" />
+	<bean id="com.liferay.reestrFermerov.service.persistence.FermerPersistence" class="com.liferay.reestrFermerov.service.persistence.FermerPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.reestrFermerov.service.RayonLocalService" class="com.liferay.reestrFermerov.service.impl.RayonLocalServiceImpl" />
+	<bean id="com.liferay.reestrFermerov.service.RayonService" class="com.liferay.reestrFermerov.service.impl.RayonServiceImpl" />
+	<bean id="com.liferay.reestrFermerov.service.persistence.RayonPersistence" class="com.liferay.reestrFermerov.service.persistence.RayonPersistenceImpl" parent="basePersistence" />
+</beans>

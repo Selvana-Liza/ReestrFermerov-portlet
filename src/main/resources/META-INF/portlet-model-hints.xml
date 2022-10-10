@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.reestrFermerov.model.Fermer">
+		<field name="fermerId" type="long" />
+		<field name="name" type="String" />
+		<field name="pravoForma" type="String" />
+		<field name="inn" type="String" />
+		<field name="kpp" type="String" />
+		<field name="ogrn" type="String" />
+		<field name="rayonRegistration" type="String" />
+		<field name="rayonPosevPole" type="String" />
+		<field name="dateRegistration" type="Date" />
+		<field name="archiveStatus" type="boolean" />
+	</model>
+	<model name="com.liferay.reestrFermerov.model.Rayon">
+		<field name="rayonId" type="long" />
+		<field name="name" type="String" />
+		<field name="kod" type="int" />
+		<field name="archive" type="boolean" />
+	</model>
+</model-hints>
